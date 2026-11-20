@@ -1,0 +1,39 @@
+/* Golden Getaway — editor chrome. Dark dusk theme, amber accent. */
+html, body { margin: 0; min-height: 100%; background: #14101a; color: #f3ede2; font: 15px/1.45 system-ui, sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 24px; box-sizing: border-box; }
+.controls { display: flex; flex-direction: column; gap: 14px; width: 320px; flex: none; }
+.controls h1 { margin: 0; font-size: 30px; letter-spacing: 0.5px; color: #ffd166; }
+.tag { margin: 0; color: #b9b0c4; }
+.field { display: flex; flex-direction: column; gap: 6px; font-weight: 600; }
+.field input[type=text] { font: inherit; padding: 9px 10px; border: 1px solid #4a4356; border-radius: 8px; background: #221c2c; color: #f3ede2; }
+.field input[type=file] { font: inherit; }
+.field input[type=range] { accent-color: #f5a623; }
+.row { display: flex; gap: 10px; align-items: center; }
+.row span { color: #b9b0c4; font-size: 13px; }
+fieldset { border: 1px solid #3a3345; border-radius: 10px; padding: 12px; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+legend { font-weight: 700; color: #ffd166; padding: 0 6px; }
+.picker { display: flex; flex-wrap: wrap; gap: 8px; }
+.picker button, .row button, button { font: inherit; font-weight: 600; padding: 8px 12px; border: 1px solid #4a4356; border-radius: 8px; background: #2b2436; color: #f3ede2; cursor: pointer; }
+.picker button:hover, button:hover { border-color: #f5a623; }
+.picker button.active { background: #f5a623; border-color: #f5a623; color: #14101a; }
+button.primary { background: #f5a623; border-color: #f5a623; color: #14101a; font-weight: 800; }
+button:disabled { opacity: 0.4; cursor: default; }
+.check { display: flex; gap: 8px; align-items: center; font-weight: 500; }
+.check input { accent-color: #f5a623; }
+.hint { margin: 0; color: #b9b0c4; font-size: 13px; }
+#panel-label { margin: 0; font-weight: 700; }
+#status { margin: 0; color: #ffd166; min-height: 1.2em; }
+.fine { margin: 0; color: #8d8496; font-size: 12px; }
+.preview { flex: 1; display: flex; justify-content: center; position: sticky; top: 24px; }
+canvas { width: min(78vh, 62vw); height: auto; max-height: 92vh; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55); cursor: grab; }
+canvas:active { cursor: grabbing; }
+body.shot-cover { background: #14101a; }
+body.shot-cover .controls { display: none; }
+body.shot-cover .app { padding: 0; gap: 0; }
+body.shot-cover .preview { position: static; }
+body.shot-cover canvas { width: 100vw; height: 100vh; max-height: none; box-shadow: none; cursor: default; }
+@media (max-width: 900px) {
+  .app { flex-direction: column; }
+  .preview { position: static; }
+  canvas { width: 100%; }
+}

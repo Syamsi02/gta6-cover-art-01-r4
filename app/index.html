@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golden Getaway — GTA-style Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <h1>Golden Getaway</h1>
+    <p class="tag">Turn your photos into a golden-hour poster cover. Everything runs
+      offline in this page — your photos never leave your machine.</p>
+
+    <label class="field">Photos (up to 4)
+      <input id="photo" type="file" accept="image/*" multiple>
+    </label>
+    <div class="row">
+      <button id="sample" type="button">Load sample photos</button>
+      <span id="photo-count" role="status">No photos yet</span>
+    </div>
+
+    <fieldset>
+      <legend>Layout</legend>
+      <div id="layouts" class="picker"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Grade</legend>
+      <div id="grades" class="picker"></div>
+    </fieldset>
+
+    <label class="field">Caption
+      <input id="caption" type="text" maxlength="40" value="Golden Getaway">
+    </label>
+    <label class="field">Tagline
+      <input id="tagline" type="text" maxlength="60" value="one last ride at dusk">
+    </label>
+
+    <label class="field">Getaway heat
+      <input id="heat" type="range" min="1" max="5" step="1" value="3">
+    </label>
+
+    <fieldset>
+      <legend>Selected panel</legend>
+      <p id="panel-label">Panel 1 of 4</p>
+      <label class="field">Zoom
+        <input id="zoom" type="range" min="1" max="2.5" step="0.05" value="1">
+      </label>
+      <p class="hint">Drag the preview to pan the photo in a panel. Click a panel to select it.</p>
+      <button id="cycle-photo" type="button">Use next photo in this panel</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Finish</legend>
+      <label class="check"><input id="outline" type="checkbox" checked> Dark title outline</label>
+      <label class="check"><input id="grain" type="checkbox" checked> Film grain</label>
+      <label class="check"><input id="halftone" type="checkbox" checked> Halftone corner</label>
+      <label class="check"><input id="vignette" type="checkbox" checked> Vignette</label>
+    </fieldset>
+
+    <div class="row">
+      <button id="undo" type="button">Undo</button>
+      <button id="redo" type="button">Redo</button>
+    </div>
+
+    <fieldset>
+      <legend>Export PNG</legend>
+      <div id="sizes" class="picker"></div>
+      <button id="export-all" type="button" class="primary">Export all three sizes</button>
+    </fieldset>
+    <p id="status" role="status"></p>
+    <p class="fine">Original art and lettering made for this app. No Rockstar Games
+      logo, artwork or font is used. Sample photos were made with an image model
+      for make.fun and are free to use.</p>
+  </section>
+  <section class="preview" aria-label="Cover preview">
+    <canvas id="cover" width="900" height="900" aria-label="The cover"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
